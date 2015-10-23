@@ -1,14 +1,15 @@
+<?php
+$Slist = array('объект1', 'объект2', 'объект3', 'объект4', 'объект5', 'объект6', 'объект7', 'объект8');
+ $dat = date("d.m y");   
+    for ($i = 0; $i < 10; $i++ )
+    {
+        echo $Slist[$i];
+    }
+?>
+
 <!DOCTYPE html>
 
-<?php
 
-	$Slist = array('объект1', 'объект2', 'объект3', 'объект4');
-    echo $Slist[2];
-    echo 'ты подонок';
-
-
-	
-?>
 
 <html lang="en">
     <head>
@@ -17,14 +18,7 @@
     </head><link rel="stylesheet" type="text/css" href="Main.css"/>
             </head>
     <body>
-    <?php
-	$Slist = array('объект1', 'объект2', 'объект3', 'объект4');
-    echo $Slist[2];
-    echo 'ты подонок';
 
-
-	
-?> 
       <div class="pervaplashka"><br><b>База первичной недвижимости Оренбурга</b><br></div>
        
         
@@ -34,16 +28,19 @@
         
        <br>
         <br> 
-        
-        <div class ="list2">
-            <div class="bignum">1</div><div class ="liist">2-комнатная квартира 60 кв. м.<br>Ценa<br>что-то еще<br>Телефончик: 8 (495) 777-66-55<br></div>  <img width="100" height="100" src="01.jpg"></Div>
+        <?php
+
+    
+        for ($i = 0; $i < 10; $i++ )
+         {echo "<div class ='list2'><div class='bignum'>$i</div><div class ='liist'>$Slist[$i]<br>Ценa<br>что-то еще<br>Телефончик: 8 (495) 777-66-55<br></div>  <img width='100' height='100' src='01.jpg'></Div>\n";
+                
+    
+        }
+         
+         ?>
+            <div >2</div><div class ="liist">2-комнатная квартира 60 кв. м.<br>Ценa<br>что-то еще<br>Телефончик: 8 (495) 777-66-55<br></div>  <img width="100" height="100" src="01.jpg"></Div>
         </div>
-         <div class ="list2">
-            <div class="bignum">2</div><div class ="liist">2-комнатная квартира 60 кв. м.<br>Ценa<br>что-то еще<br>Телефончик: 8 (495) 777-66-55<br></div>  <img width="100" height="100" src="01.jpg"></Div>
-        </div>
-         <div class ="list2">
-            <div class="bignum">3</div><div class ="liist">2-комнатная квартира 60 кв. м.<br>Ценa<br>что-то еще<br>Телефончик: 8 (495) 777-66-55<br></div>  <img width="100" height="100" src="01.jpg"></Div>
-        </div>
+         
          <div class ="list2">
             <div class="bignum">4</div><div class ="liist">2-комнатная квартира 60 кв. м.<br>Ценa<br>что-то еще<br>Телефончик: 8 (495) 777-66-55<br></div>  <img width="100" height="100" src="01.jpg"></Div>
         </div>
