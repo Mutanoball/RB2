@@ -1,5 +1,15 @@
 <!DOCTYPE html>
 
+<?php
+
+	$Slist = array('объект1', 'объект2', 'объект3', 'объект4');
+    echo $Slist[2];
+    echo 'ты подонок';
+
+
+	
+?>
+
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -7,7 +17,14 @@
     </head><link rel="stylesheet" type="text/css" href="Main.css"/>
             </head>
     <body>
-     
+    <?php
+	$Slist = array('объект1', 'объект2', 'объект3', 'объект4');
+    echo $Slist[2];
+    echo 'ты подонок';
+
+
+	
+?> 
       <div class="pervaplashka"><br><b>База первичной недвижимости Оренбурга</b><br></div>
        
         
