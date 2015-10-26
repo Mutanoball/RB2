@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-
-<html lang="ru">
+<html>  
     <head>
-        <meta charset="utf-8" />
+        <meta charset="utf-8"/>
         <title>База первичной недвижимости Оренбурга</title>
         <link rel="stylesheet" type="text/css" href="Main.css"/>
-            </head>
+    </head>
+    
     <body>
     <?php include "Header.php"?>
     </body>
