@@ -1,6 +1,4 @@
-
         <link rel="stylesheet" type="text/css" href="Main.css"/>
-
     
         <hr class= "nomar" size=30 color=#088></hr>
         <div class="pervaplashka"><br><b>База первичной недвижимости Оренбурга</b><br></div>

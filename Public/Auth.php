@@ -1,14 +1,11 @@
-<!DOCTYPE html>
-
-<html lang="en">
+<html>  
     <head>
-        <meta charset="utf-8" />
-        <title>Авторизация</title>
-    </head><link rel="stylesheet" type="text/css" href="Main.css"/>
-            </head>
+        <meta charset="utf-8"/>
+        <title>База первичной недвижимости Оренбурга</title>
+        <link rel="stylesheet" type="text/css" href="Main.css"/>
+    </head>
+    
     <body>
-     <hr class= "nomar" size=30 color=#088 noshade > </hr>
-      <div class="pervaplashka"><br><b>База первичной недвижимости Оренбурга</b><br></div>
-    <body>
-        
+    <?php include "Header.php"?>
+    </body>
 </html>
