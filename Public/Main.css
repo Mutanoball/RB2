@@ -37,7 +37,7 @@ font-size : 100px;
 border-radius:  45px;
 }
 
-.boton {
+.menu-item {
   display:block;
   background:#eee;
   color:#088;
@@ -50,7 +50,7 @@ border-radius:  45px;
   transition:all 0.3s;
   flex-grow: 1;
   }
-.boton2 {
+.menu-item_state_active {
   display:block;
   background:#eee;
   color:#088;
@@ -64,7 +64,7 @@ border-radius:  45px;
   flex-grow: 1;
   box-shadow:0px -3px 0 #088 inset;
   }
- .boton:hover{
+ .menu-item:hover{
   box-shadow:0px -3px 0 #088 inset;
 }
 
