@@ -50,6 +50,20 @@ border-radius:  45px;
   transition:all 0.3s;
   flex-grow: 1;
   }
+.boton2 {
+  display:block;
+  background:#eee;
+  color:#088;
+  font-family: DaxlinePro-Regular;
+  font-weight: 300;
+  text-decoration:none;
+  text-align:center;
+  margin:2px 1px;
+  padding:10px 10px;
+  transition:all 0.3s;
+  flex-grow: 1;
+  box-shadow:0px -3px 0 #088 inset;
+  }
  .boton:hover{
   box-shadow:0px -3px 0 #088 inset;
 }

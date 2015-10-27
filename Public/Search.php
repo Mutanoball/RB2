@@ -6,6 +6,9 @@
     </head>
     
     <body>
-    <?php include "Header.php"?>
+    <?php 
+    $page=2;
+    include "Header.php";
+    ?>
     </body>
 </html>

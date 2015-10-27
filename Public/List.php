@@ -1,5 +1,6 @@
 <?php
-$komnost = array ('0-комнатная квартира', '1-комнатная квартира', '2-комнатная квартира', '3-комнатная квартира', '4-комнатная квартира');
+$page=1;
+$komnost = array ('1-комнатная квартира', '2-комнатная квартира', '3-комнатная квартира', '4-комнатная квартира');
 $price = array ();
 $telnum = array ();
 $telprefix = array ('922','912','903');
@@ -26,7 +27,7 @@ for ($i = 0; $i<16; $i++)
 <?php 
 include "Header.php";
 for ($i = 1; $i < 16; $i++ ){
-$z1=mt_rand(1,4);
+$z1=mt_rand(0,3);
 $z2=mt_rand(0,7);
 echo "<div class ='list2'><div class='bignum'>$i</div><div class ='liist'>$komnost[$z1] $sqarea[$i] кв.м <br>Ценa: $price[$i] рублей<br>$Slist[$z2]<br>Телефончик: $telnum[$i]<br></div>  <img width='100' height='100' src='01.jpg'></Div>\n";
 }
