@@ -1,4 +1,4 @@
--- MySQL dump 10.13  Distrib 5.5.44, for debian-linux-gnu (i686)
+﻿-- MySQL dump 10.13  Distrib 5.5.44, for debian-linux-gnu (i686)
 --
 -- Host: localhost    Database: RB2
 -- ------------------------------------------------------
@@ -26,7 +26,7 @@ CREATE TABLE `District` (
   `iddistrict` int(11) NOT NULL DEFAULT '0',
   `district` text,
   PRIMARY KEY (`iddistrict`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -57,7 +57,7 @@ CREATE TABLE `Supply` (
   `iddistrict` int(11) DEFAULT NULL,
   `date` date DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
