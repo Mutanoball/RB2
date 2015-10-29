@@ -1,4 +1,4 @@
-﻿-- MySQL dump 10.13  Distrib 5.5.44, for debian-linux-gnu (i686)
+-- MySQL dump 10.13  Distrib 5.5.44, for debian-linux-gnu (i686)
 --
 -- Host: localhost    Database: RB2
 -- ------------------------------------------------------
@@ -26,7 +26,7 @@ CREATE TABLE `District` (
   `iddistrict` int(11) NOT NULL DEFAULT '0',
   `district` text,
   PRIMARY KEY (`iddistrict`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -56,8 +56,10 @@ CREATE TABLE `Supply` (
   `stage` text,
   `iddistrict` int(11) DEFAULT NULL,
   `date` date DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  PRIMARY KEY (`id`),
+  KEY `iddistrict` (`iddistrict`),
+  CONSTRAINT `Supply_ibfk_1` FOREIGN KEY (`iddistrict`) REFERENCES `District` (`iddistrict`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -79,4 +81,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-10-29 15:35:42
+-- Dump completed on 2015-10-29 16:16:34
