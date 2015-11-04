@@ -23,7 +23,7 @@
     $rooms=$row['rooms'];
     $date=$row['date'];
     echo "<div class ='list2'><div class='bignum'>$i</div>";
-    echo "<div class ='liist'>$rooms комнатная кваритра $area кв.м <br>Ценa: $price рублей<br>$storey этаж<br>Добавлено: $date<br></div>  <img width='100' height='100' src='01.jpg'></Div>\n";
+    echo "<div class ='liist'>$rooms комнатная квартира $area кв.м <br>Ценa: $price рублей<br>$storey этаж<br>Добавлено: $date<br></div>  <img width='100' height='100' src='01.jpg'></Div>\n";
     
     }
     ?>
