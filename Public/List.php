@@ -8,6 +8,7 @@
 <?php
 
     $page=1;
+    include '../config.php';
     include "Header.php";
     include "Paginator.php";
     

@@ -2,6 +2,7 @@
 
 
 $server = "localhost";
-$username = 'root';
-$password ='';
-$db = 'RB3';
+$username ="root";
+$password = "";
+$db = "RB2";
+?>

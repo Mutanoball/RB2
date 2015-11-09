@@ -2,14 +2,13 @@
     
     $pagi=$_GET['pagi'];
     if (empty($pagi)) $pagi=1;
-    function PaginationFromBase($dbhost, $dbuser, $db, $ordercriteria, $currpage, $showitems)
+    function PaginationFromBase($dbhost, $dbuser, $dbpassword, $dbname, $ordercriteria, $currpage, $showitems)
     {
-    mysql_connect($dbhost, $dbuser);
-    mysql_select_db($db);
+    $dbcon = new mysqli($dbhost, $dbuser, $dbpassword, $dbname);
     $limlow = ($currpage-1)*$showitems;
     $i=0;
-    $result = mysql_query("SELECT * FROM Supply order by $ordercriteria LIMIT $limlow, $showitems");
-    while ($row = mysql_fetch_assoc($result)) {
+    $result = $dbcon->query("SELECT * FROM Supply order by $ordercriteria LIMIT $limlow, $showitems");
+    while ($row = $result->fetch_assoc()) {
     $i++;
     $area=$row['area'];
     $price=$row['price'];
@@ -35,6 +34,6 @@
 ?>
     <?php
         $lim=5;
-    PaginationFromBase("localhost", "root", "RB2", "price", $pagi, 5);
+    PaginationFromBase($server, $username, $password, $db, "price", $pagi, 5);
     ?>
 
