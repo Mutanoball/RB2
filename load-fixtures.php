@@ -2,8 +2,8 @@
 include ('config.php');
 
 
-    mysql_connect($server, $username, $password);
-    mysql_select_db($db);
+    $db = new mysqli($server, $username, $password, $db);
+  
     // Temporary variable, used to store current query
 $templine = '';
 // Read in entire file
@@ -21,7 +21,7 @@ $templine .= $line;
 if (substr(trim($line), -1, 1) == ';')
 {
     // Perform the query
-    mysql_query($templine) or print('Error performing query \'<strong>' . $templine . '\': ' . mysql_error() . '<br /><br />');
+    $db->query($templine) or print('Error performing query \'<strong>' . $templine . '\': ' . mysql_error() . '<br /><br />');
     // Reset temp variable to empty
     $templine = '';
 }
