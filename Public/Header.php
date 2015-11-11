@@ -3,7 +3,7 @@
        
         <hr class= "nomar" size=30 color=#088></hr>
         <div class="pervaplashka"><br><b>База первичной недвижимости Оренбурга</b><br></div>
-        <div class="menu" align ="center">
+        <div class="menu">
         
     <?php    
         if ($page == 1) 

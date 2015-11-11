@@ -13,8 +13,8 @@
 
         function init(){ 
             myMap = new ymaps.Map("map", {
-                center: [55.76, 37.64],
-                zoom: 7
+                center: [51.77, 55.10],
+                zoom: 12
             });
             }
     </script> 
@@ -39,16 +39,26 @@
     $date=$row['date'];
     $storey=$row['storey'];
     $rooms=$row['rooms'];
+    $stage=$row['stage'];
     $district=$row['district'];
     $num=$row['id'];
-    echo "<br><br><br><br><br><br>";
-    echo "<div class ='list2'><div class='bignum'>$num</div>";
-    echo "<div class ='liist' style='font-size: 20pt' >$rooms комнатная квартира</a> $area кв.м <br>Ценa: $price рублей<br>Цена за кв. метр: $metercost рублей<br>$storey этаж<br>$district район <br>Дата публикации: $date<br></div>  <img width='250' height='250' src='01.jpg'><div id='map' style='width: 250px; height: 250px'></div></Div>\n";
-    
+    echo "<br><br><br>";
+
+    echo "<div class='offer-block'>
+          <div class='inner-list' style='font-size:20px'>$rooms комнатная квартира<br>$area кв.м <br>Ценa: $price рублей<br>Цена за кв. метр: $metercost рублей<br>$storey этаж<br>$district район <br>Стадия постройки: $stage<br>Дата публикации: $date<br></div>
+          <img width='250' height='250' src='01.jpg'>
+          <div id='map' style='width: 250px; height: 250px'></div>
+          </div>";  
     }
     }
     OfferFromBase($server, $username, $password, $db, $idflat);
 ?>
      
- 
+   <div class='pics-frame'>
+    <img style="border: 20px double #eee;" width='125' height='130' src='01.jpg'>
+    <img style="border: 20px double #eee;" width='125' height='130' src='01.jpg'>
+    <img style="border: 20px double #eee;" width='125' height='130' src='01.jpg'>
+    <img style="border: 20px double #eee;" width='125' height='130' src='01.jpg'>
+    <img style="border: 20px double #eee;" width='125' height='130' src='01.jpg'>
+    </div>
     </body>
