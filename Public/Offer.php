@@ -14,7 +14,7 @@
         function init(){ 
             myMap = new ymaps.Map("map", {
                 center: [51.77, 55.10],
-                zoom: 12
+                zoom: 16
             });
             myPlacemark = new ymaps.Placemark([51.77, 55.10], {
                 hintContent: 'А вот она',
