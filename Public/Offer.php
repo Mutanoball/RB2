@@ -20,6 +20,7 @@
                 hintContent: 'А вот она',
                 balloonContent: 'Хатка-то!'
             });
+            myMap.geoObjects.add(myPlacemark);
             }
     </script> 
     
