@@ -16,6 +16,10 @@
                 center: [51.77, 55.10],
                 zoom: 12
             });
+            myPlacemark = new ymaps.Placemark([51.77, 55.10], {
+                hintContent: 'А вот она',
+                balloonContent: 'Хатка-то!'
+            });
             }
     </script> 
     
