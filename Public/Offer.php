@@ -22,10 +22,12 @@
             });
             myMap.geoObjects.add(myPlacemark);
             }
+         
     </script> 
     
 </head>
 <body>
+    
 <?php
     include '../config.php';
     include "Header.php";
@@ -50,20 +52,28 @@
     echo "<br><br><br>";
 
     echo "<div class='offer-block'>
-          <div class='inner-list' style='font-size:20px'>$rooms комнатная квартира<br>$area кв.м <br>Ценa: $price рублей<br>Цена за кв. метр: $metercost рублей<br>$storey этаж<br>$district район <br>Стадия постройки: $stage<br>Дата публикации: $date<br></div>
-          <img width='250' height='250' src='01.jpg'>
+          <div class='inner-list' style='font-size:20px'>$rooms комнатная квартира<br>$area кв.м <br>Ценa: $price рублей<br>Цена за кв. метр: $metercost рублей<br>$storey этаж<br>$district район <br>Стадия постройки: $stage<br>Дата публикации: $date<br></div>";?>
+          <img class='bigpic' width='250' height='250' src='01.jpg'>
           <div id='map' style='width: 250px; height: 250px'></div>
-          </div>";  
-    }
+          </div>  
+<?php    }
     }
     OfferFromBase($server, $username, $password, $db, $idflat);
-?>
+    ?>
+
      
    <div class='pics-frame'>
     <img style="border: 20px double #eee;" width='125' height='130' src='01.jpg'>
-    <img style="border: 20px double #eee;" width='125' height='130' src='01.jpg'>
-    <img style="border: 20px double #eee;" width='125' height='130' src='01.jpg'>
-    <img style="border: 20px double #eee;" width='125' height='130' src='01.jpg'>
-    <img style="border: 20px double #eee;" width='125' height='130' src='01.jpg'>
+    <img style="border: 20px double #eee;" width='125' height='130' src='02.jpg'>
+    <img style="border: 20px double #eee;" width='125' height='130' src='03.jpg'>
+    <img style="border: 20px double #eee;" width='125' height='130' src='04.jpg'>
+    <img style="border: 20px double #eee;" width='125' height='130' src='05.jpg'>
     </div>
-    </body>
+    
+ <script> 
+          var getSmallPic = document.querySelector('.pics-frame');
+          var getGigPic = document.querySelector('.bigpic');
+          var changePic = function (elem) { getGigPic.src=elem.target.src };
+          getSmallPic.addEventListener("click", changePic, false);
+</script>
+</body>
