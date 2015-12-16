@@ -7,22 +7,26 @@
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript"></script>
     <meta charset="utf-8" />    
     <script type="text/javascript">
-        ymaps.ready(init);
-        var myMap, 
-            myPlacemark;
+         ymaps.ready(init);
+         var myMap,
+             myGeocoder,
+             myPlacemark;
 
-        function init(){ 
-            myMap = new ymaps.Map("map", {
-                center: [51.77, 55.10],
-                zoom: 16
-            });
-            myPlacemark = new ymaps.Placemark([51.77, 55.10], {
-                hintContent: 'А вот она',
-                balloonContent: 'Хатка-то!'
-            });
-            myMap.geoObjects.add(myPlacemark);
-            }
-         
+
+         function init()
+         {
+              myGeocoder = ymaps.geocode("Оренбург");
+              myMap = new ymaps.Map("map", {
+                   center: [51.77, 55.10],
+                   zoom: 16
+              });
+              myPlacemark = new ymaps.Placemark([51.77, 55.10], {
+                   hintContent: 'А вот она',
+                   balloonContent: 'Хатка-то!'
+              });
+              myMap.geoObjects.add(myPlacemark);
+         }
+
     </script> 
     
 </head>
