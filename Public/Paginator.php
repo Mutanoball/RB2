@@ -5,6 +5,7 @@
     function PaginationFromBase($dbhost, $dbuser, $dbpassword, $dbname, $ordercriteria, $currpage, $showitems)
     {
     $dbcon = new mysqli($dbhost, $dbuser, $dbpassword, $dbname);
+    $dbcon->set_charset("utf8");
     $limlow = ($currpage-1)*$showitems;
     $i=0;
     $result = $dbcon->query("SELECT * FROM Supply inner join District on Supply.iddistrict = District.iddistrict order by $ordercriteria LIMIT $limlow, $showitems");

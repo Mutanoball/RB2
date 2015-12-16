@@ -1,6 +1,6 @@
         
         <link rel="stylesheet" type="text/css" href="Main.css"/>
-       
+       <script src='https://code.jquery.com/jquery-2.1.4.min.js'></script>
         <hr class= "nomar" size=30 color=#088></hr>
         <div class="pervaplashka"><br><b>База первичной недвижимости Оренбурга</b><br></div>
         <div class="menu">

@@ -1,3 +1,17 @@
+@font-face {
+     font-family: GloberThinFree;
+     src: url(Glober.otf);
+}
+@font-face {
+     font-family: DaxlinePro-Regular;
+     src: url(DaxlinePro-Regular.otf);
+}
+
+@font-face {
+     font-family: DaxlinePro-Thin;
+     src: url(DaxlinePro-Thin.otf);
+}
+
 body{
 margin: 0 0 0 0;
 min-width: 800px;
@@ -30,7 +44,7 @@ border: 0 0 0 0;
   display:block;
   background:#eee;
   color:#088;
-  font-family: DaxlinePro-Regular;
+  font-family: DaxlinePro-Thin;
   font-weight: 300;
   text-decoration:none;
   text-align:center;
@@ -116,3 +130,55 @@ border: 0 0 0 0;
 .ramka{
     border: 20px double #333;
     }
+
+.auth {
+    margin:0 auto;
+    min-width: 250px;
+    text-align: center;
+    
+}
+
+.auth input{
+     line-height: 230%;
+     border-bottom: 0;
+     border-top: 0;
+     border-left: 0;
+     border-right: 0;
+     font-family: DaxlinePro-Thin;
+     font-size: 16px;
+     color: #088;
+     text-align: center;
+     background:#eee;
+     transition:all 0.3s;
+}
+
+.auth input:hover{
+ box-shadow:0px -3px 0 #088 inset;
+
+}
+
+
+.auth input::-webkit-input-placeholder{
+   color: #088;
+   font-style: italic;
+   text-align: center;
+   
+}
+
+.auth input:-ms-input-placeholder{  
+    color: #088;
+   font-style: italic;
+   text-align: center; 
+}
+.wrongfield{
+     border: 2px solid red !important;
+}
+
+.rightfield{
+     border: 0;
+}
+
+.emptywarning{
+  font: 16px DaxlinePro-Thin;   
+  color: red  
+}
