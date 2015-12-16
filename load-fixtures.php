@@ -7,7 +7,7 @@ include ('config.php');
     // Temporary variable, used to store current query
 $templine = '';
 // Read in entire file
-$lines = file('fixtures.sql');
+$lines = file('Public/fixtures.sql');
 // Loop through each line
 foreach ($lines as $line)
 {
