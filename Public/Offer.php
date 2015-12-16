@@ -35,6 +35,7 @@
     function OfferFromBase($dbhost, $dbuser, $dbpassword, $dbname, $idflat)
     {
     $dbcon = new mysqli($dbhost, $dbuser, $dbpassword, $dbname);
+    $dbcon->set_charset("utf8");
     $limlow = ($currpage-1)*$showitems;
     $i=0;
     $result = $dbcon->query("SELECT * FROM Supply inner join District on Supply.iddistrict = District.iddistrict WHERE id=$idflat");
@@ -49,10 +50,11 @@
     $stage=$row['stage'];
     $district=$row['district'];
     $num=$row['id'];
+    $address=$row['address'];
     echo "<br><br><br>";
 
     echo "<div class='offer-block'>
-          <div class='inner-list' style='font-size:20px'>$rooms комнатная квартира<br>$area кв.м <br>Ценa: $price рублей<br>Цена за кв. метр: $metercost рублей<br>$storey этаж<br>$district район <br>Стадия постройки: $stage<br>Дата публикации: $date<br></div>";?>
+          <div class='inner-list' style='font-size:20px'>$rooms комнатная квартира<br>$area кв.м <br>Ценa: $price рублей<br>Цена за кв. метр: $metercost рублей<br>$storey этаж<br>$district район <br>Адрес: $address<br>Стадия постройки: $stage<br>Дата публикации: $date<br></div>";?>
           <img class='bigpic' width='250' height='250' src='01.jpg'>
           <div id='map' style='width: 250px; height: 250px'></div>
           </div>  
