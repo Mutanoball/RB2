@@ -22,31 +22,35 @@
      
          <script>
 
-             document.forms[0].elements[0].oninput = function () 
-             { 
-             document.getElementsByClassName("emptywarning")[0].innerText = "";
-             document.forms[0].elements[0].className = "rightfield";
-             };
+              document.forms[0].elements[0].oninput = function ()
+              {
+                   document.getElementsByClassName("emptywarning")[0].innerText = "";
+                   document.forms[0].elements[0].className = "rightfield";
+              };
 
-             document.forms[0].elements[1].oninput = function () 
-             { 
-             document.getElementsByClassName("emptywarning")[1].innerText = "";
-             document.forms[0].elements[1].className = "rightfield";
-             };
-                          
+              document.forms[0].elements[1].oninput = function ()
+              {
+                   document.getElementsByClassName("emptywarning")[1].innerText = "";
+                   document.forms[0].elements[1].className = "rightfield";
+              };
+
               function yes() { alert("good") };
               function no(name, password)
               {
-                   if (name.value == "")
-                   {
-                        document.getElementsByClassName("emptywarning")[0].innerText = "пожалуйста, введите логин";
-                        name.className = "wrongfield";
-                   };
                    if (password.value == "")
                    {
                         document.getElementsByClassName("emptywarning")[1].innerText = "пожалуйста, введите пароль";
                         password.className = "wrongfield";
+                        password.focus();
                    }
+                   if (name.value == "")
+                   {
+                        document.getElementsByClassName("emptywarning")[0].innerText = "пожалуйста, введите логин";
+                        name.className = "wrongfield";
+                        name.focus();
+                        
+                   };
+                 
 
               };
               function valid()
