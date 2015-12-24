@@ -20,10 +20,19 @@
     $district=$row['district'];
     $num=$i+$limlow;
    
+    $result2 = $dbcon->query("SELECT * FROM Offerimages  inner join Images on Offerimages.idimage = Images.id WHERE idoffer = $num");
+               while ($row2 = $result2->fetch_row()) {
+                    
+                    
+                    $Src='Src/'.$row2[3];
+                    
+                    
+               }
+          
     echo   "<div class ='list-block'>
                 <div class='bignum'>$num</div>
                 <div class ='inner-list'><a href='Offer.php?id=$id'>$rooms комнатная квартира</a> $area кв.м <br>Ценa: $price рублей<br>$storey этаж<br>$district район <br></div>
-                <img width='100' height='100' src='01.jpg'>
+                <img width='100' height='100' src=$Src>
             </div>\n";
     }
     ?>

@@ -20,7 +20,7 @@
                $dbcon->set_charset("utf8");
                $limlow = ($currpage-1)*$showitems;
                $i=0;
-               $result = $dbcon->query("SELECT * FROM Supply inner join District on Supply.iddistrict = District.iddistrict WHERE id=$idflat");
+               $result = $dbcon->query("SELECT * FROM Supply inner join District on Supply.iddistrict = District.iddistrict inner join Users on Supply.iduser = Users.id WHERE Supply.id=$idflat");
                while ($row = $result->fetch_assoc()) {
                $i++;
                $area=$row['area'];
@@ -32,30 +32,46 @@
                $stage=$row['stage'];
                $district=$row['district'];
                $num=$row['id'];
+               $user=$row['login'];
                $address=$row['address'];
                echo "<br><br><br>";
                
                echo "<div class='offer-block'>
-                     <div class='inner-list' style='font-size:20px'>$rooms комнатная квартира<br>$area кв.м <br>Ценa: $price рублей<br>Цена за кв. метр: $metercost рублей<br>$storey этаж<br>$district район <br>Адрес: $address<br>Стадия постройки: $stage<br>Дата публикации: $date<br></div>";
+                     <div class='inner-list' style='font-size:20px'>$rooms комнатная квартира $area кв.м <br><b>Ценa: $price рублей</b><br>Цена за кв. метр: $metercost рублей<br>$storey этаж<br>$district район <br>Адрес: $address<br>Стадия постройки: $stage<br>Дата публикации: $date<br>Автор публикации: $user<br></div>";
+          
+               }
+               $i=0;
+
+               $result2 = $dbcon->query("SELECT * FROM Offerimages  inner join Images on Offerimages.idimage = Images.id WHERE idoffer = $idflat");
+               while ($row2 = $result2->fetch_row()) {
+                    
+                    $i++;
+                    $Src[$i]=$row2[3];
+                    
+                    
+               }
+          
+               
           ?>
-          <img class=bigpic width=250 height=250 src=01.jpg>
+          <img class=bigpic width=250 height=250 src=<?='Src/'.$Src[1]?>>
           <div id=map style="width: 250px; height: 250px"></div>
           
           </div><p id='address' data-address='Оренбург, <?=$address?>'></p>
+          <div class=pics-frame>
+               <img style="border: 20px double #eee;" width=125 height=130 src=<?='Src/'.$Src[1]?>>
+               <img style="border: 20px double #eee;" width=125 height=130 src=<?='Src/'.$Src[2]?>>
+               <img style="border: 20px double #eee;" width=125 height=130 src=<?='Src/'.$Src[3]?>>
+               <img style="border: 20px double #eee;" width=125 height=130 src=<?='Src/'.$Src[4]?>>
+               <img style="border: 20px double #eee;" width=125 height=130 src=<?='Src/'.$Src[5]?>>
+          </div>
           <?php
-               }
+               
                }
                OfferFromBase($server, $username, $password, $db, $idflat);
           ?>
 
 
-          <div class=pics-frame>
-               <img style="border: 20px double #eee;" width=125 height=130 src=01.jpg>
-               <img style="border: 20px double #eee;" width=125 height=130 src=02.jpg>
-               <img style="border: 20px double #eee;" width=125 height=130 src=03.jpg>
-               <img style="border: 20px double #eee;" width=125 height=130 src=04.jpg>
-               <img style="border: 20px double #eee;" width=125 height=130 src=05.jpg>
-          </div>
+          
           
           
           <script>
