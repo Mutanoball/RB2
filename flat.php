@@ -1,7 +1,7 @@
 <?php
 require 'config.php';
 
-$idflat = substr($_SERVER['REQUEST_URI'],1);
+$idflat = substr($_SERVER['REQUEST_URI'],7);
 echo ($idflat);
 function offerFromBase($dbhost, $dbuser, $dbpassword, $dbname, $idflat) 
 {
@@ -42,15 +42,15 @@ function offerFromBase($dbhost, $dbuser, $dbpassword, $dbname, $idflat)
         $Src[$i] = $row2[3];
     }
     ?>
-          <img class=bigpic width=250 height=250 src=<?='Public/Src/'.$Src[1]?>>
+          <img class=bigpic width=250 height=250 src=<?='/Public/Src/'.$Src[1]?>>
           <div id=map style="width: 250px; height: 250px"></div>
           </div><p id='address' data-address='Оренбург, <?=$address?>'></p>
           <div class=pics-frame>
-               <img style="border: 20px double #eee;" width=125 height=130 src=<?='Public/Src/'.$Src[1]?>>
-               <img style="border: 20px double #eee;" width=125 height=130 src=<?='Public/Src/'.$Src[2]?>>
-               <img style="border: 20px double #eee;" width=125 height=130 src=<?='Public/Src/'.$Src[3]?>>
-               <img style="border: 20px double #eee;" width=125 height=130 src=<?='Public/Src/'.$Src[4]?>>
-               <img style="border: 20px double #eee;" width=125 height=130 src=<?='Public/Src/'.$Src[5]?>>
+               <img style="border: 20px double #eee;" width=125 height=130 src=<?='/Public/Src/'.$Src[1]?>>
+               <img style="border: 20px double #eee;" width=125 height=130 src=<?='/Public/Src/'.$Src[2]?>>
+               <img style="border: 20px double #eee;" width=125 height=130 src=<?='/Public/Src/'.$Src[3]?>>
+               <img style="border: 20px double #eee;" width=125 height=130 src=<?='/Public/Src/'.$Src[4]?>>
+               <img style="border: 20px double #eee;" width=125 height=130 src=<?='/Public/Src/'.$Src[5]?>>
           </div>
     <?php
 }

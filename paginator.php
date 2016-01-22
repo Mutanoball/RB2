@@ -1,6 +1,6 @@
 <?php
 require 'config.php';
-$pagi = $_GET['pagi'];
+$pagi = substr($_SERVER['REQUEST_URI'],5);
 if (empty($pagi)) {
     $pagi = 1;
 }
@@ -30,7 +30,7 @@ function paginationFromBase($dbhost, $dbuser, $dbpassword, $dbname, $ordercriter
         
         echo "<div class ='list-block'>
               <div class='bignum'>$num</div>
-              <div class ='inner-list'><a href='$id'>$rooms комнатная квартира</a> $area кв.м <br>
+              <div class ='inner-list'><a href='offer/$id'>$rooms комнатная квартира</a> $area кв.м <br>
               Ценa: $price рублей<br>
               $storey этаж<br>
               $district район <br>
@@ -50,7 +50,7 @@ function paginationFromBase($dbhost, $dbuser, $dbpassword, $dbname, $ordercriter
             $iu[$i] = "menu-item_state_active";
         }
         ?>
-        <a href="?pagi=<?= $i ?>" class=<?= $iu[$i] ?>><?= $i ?></a>
+        <a href="page<?= $i ?>" class=<?= $iu[$i] ?>><?= $i ?></a>
     <?php
     }
 }
