@@ -1,7 +1,3 @@
-<?php 
-$page=4;
-require "Header.php";
-?>
      <form class="auth" onsubmit="return valid()">
           <br><br><br>
           <p><input id='name' type="text" size="30" placeholder="Имя" name="login"></p>

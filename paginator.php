@@ -1,4 +1,5 @@
 <?php
+require 'config.php';
 $pagi = $_GET['pagi'];
 if (empty($pagi)) {
     $pagi = 1;
@@ -29,12 +30,12 @@ function paginationFromBase($dbhost, $dbuser, $dbpassword, $dbname, $ordercriter
         
         echo "<div class ='list-block'>
               <div class='bignum'>$num</div>
-              <div class ='inner-list'><a href='Offer.php?id=$id'>$rooms комнатная квартира</a> $area кв.м <br>
+              <div class ='inner-list'><a href='$id'>$rooms комнатная квартира</a> $area кв.м <br>
               Ценa: $price рублей<br>
               $storey этаж<br>
               $district район <br>
               </div>
-              <img width='100' height='100' src=$Src>
+              <img width='100' height='100' src=Public/$Src>
               </div>\n";
     }
     ?>
@@ -56,6 +57,6 @@ function paginationFromBase($dbhost, $dbuser, $dbpassword, $dbname, $ordercriter
 ?>
     <?php
 $lim = 5;
-paginationFromBase($server, $username, $password, $db, "price", $pagi, 5);
+
 ?>
 
