@@ -56,6 +56,8 @@ if ($page == "onmap") {
 echo '</div>';
 
 switch ($page) {
+    case "";
+        break;
     case "list";
         $at = new Paginator ($app1->GetDB());
         $at->printSearchOffers('price', 5, ($pageNum-1)*5);
@@ -79,6 +81,8 @@ switch ($page) {
         $at->showOffer();
         $at->rollImageTape();
         break;
+    default:
+        echo '<p style="font-size: 40pt"> ЧЕТЫРЕСТА ЧЕТЫРЕ!!!<p>';
 }
 
 
