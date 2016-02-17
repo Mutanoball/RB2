@@ -12,13 +12,26 @@
         <div class="pervaplashka"><br><b>База первичной недвижимости Оренбурга</b><br></div>
         <div class="menu">
 <?php
-    
+require_once "config.php";
+spl_autoload_register(function ($class) {
+    include $class . '.php';
+});
+
+$dbparams = array ("host" => $server,
+                   "user" => $username,
+                   "password" => $password,
+                   "database" => $db);
+$app1 = new App($dbparams);
 $page = substr($_SERVER['REQUEST_URI'],1);
 
-if ($page == "list") {
+if (strpos($page, "list") === 0 or strpos($page, "offer") === 0) {
+    $pageNum = substr($page, -1);
+    if (strpos($page, "list") === 0) $page = 'list';
+    if (strpos($page, "offer") === 0) $page = 'offer';
+    if ($pageNum == "t") $pageNum = 1;
     echo '<p class="menu-item_state_active">Список предложений</p>';
 } else {
-    echo '<a href="/list" class="menu-item">Список предложений</a>';
+    echo '<a href="/list/1" class="menu-item">Список предложений</a>';
 }
 if ($page == "search") {
     echo '<p class="menu-item_state_active">Поиск</p>';
@@ -44,11 +57,9 @@ echo '</div>';
 
 switch ($page) {
     case "list";
-    case "page1";
-    case "page2";
-    case "page3";
-        require ("paginator.php");
-        paginationFromBase($server, $username, $password, $db, "price", $pagi, 5);
+        $at = new Paginator ($app1->GetDB());
+        $at->printSearchOffers('price', 5, ($pageNum-1)*5);
+        $at->pageNumber($pageNum);
         break;
     case "search":
         echo "Поиск же";
@@ -62,8 +73,12 @@ switch ($page) {
     case "onmap":
         echo "но не очко обычно губит, а к одиннадцати туз";
         break;
-    default:
-        require ('flat.php');
+    case "offer":
+        $at = new Flat ($app1->GetDB());
+        $at->prepareOffer($pageNum);
+        $at->showOffer();
+        $at->rollImageTape();
+        break;
 }
 
 
