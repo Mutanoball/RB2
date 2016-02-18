@@ -7,8 +7,9 @@
           <p><input type="submit" style="width: 275px; font-family: DaxlinePro-Regular" value="Войти"></p>
                 
      </form>
-<p class = tr> здрав буде боярин <p>     
+<p class = 'login'><p>     
 <script>
+    var login = '';
     document.forms[0].elements[0].oninput = function () {
         document.getElementsByClassName("emptywarning")[0].innerText = "";
         document.forms[0].elements[0].className = "rightfield";
@@ -20,9 +21,9 @@
     };
 
     function yes() {
-        alert(jsdhfjsdgjfds);
-        document.getElementsByClassName("tr")[0].innerText = "Лаве хуйнане";
-        window.confirm(rtert);
+        login = document.forms[0].elements[0].value;
+        document.getElementsByClassName("login")[0].innerText = login;
+        
     };
 
     function no(name, password) {
@@ -45,7 +46,10 @@
             no(name, password);
             return false;
         }
-        else alert(jsdhfjsdgjfds);
+        else {
+            yes()
+            return false;
+        }
     }
 </script>
     </body>

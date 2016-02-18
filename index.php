@@ -9,7 +9,7 @@
     
     <body>        
         <hr class="nomar">
-        <div class="pervaplashka"><br><b>База первичной недвижимости Оренбурга</b><br></div>
+        <div class="pervaplashka"><p style="font-size: 10pt">Имя<p><br><b>База первичной недвижимости Оренбурга</b><br></div>
         <div class="menu">
 <?php
 ini_set('display_errors', 1);
@@ -24,7 +24,7 @@ $dbparams = array ("host" => $server,
                    "user" => $username,
                    "password" => $password,
                    "database" => $db);
-$app1 = new App($dbparams);
+$app1 = new app($dbparams);
 $page = substr($_SERVER['REQUEST_URI'],1);
 
 if (strpos($page, "list") === 0 or strpos($page, "offer") === 0) {
@@ -62,7 +62,7 @@ switch ($page) {
     case "";
         break;
     case "list";
-        $at = new Praginator ($app1->GetDB());
+        $at = new paginator ($app1->GetDB());
         $at->printSearchOffers('price', 5, ($pageNum-1)*5);
         $at->pageNumber($pageNum);
         break;

@@ -1,5 +1,5 @@
 <?php
-class Praginator {
+class paginator {
     
     
     
