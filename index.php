@@ -64,7 +64,7 @@ switch ($page) {
     case "";
         break;
     case "list";
-        $at = new Paginator ($app1->GetDB());
+        $at = new Praginator ($app1->GetDB());
         $at->printSearchOffers('price', 5, ($pageNum-1)*5);
         $at->pageNumber($pageNum);
         break;
