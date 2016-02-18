@@ -23,7 +23,7 @@ $dbparams = array ("host" => $server,
                    "database" => $db);
 $app1 = new App($dbparams);
 $page = substr($_SERVER['REQUEST_URI'],1);
-var_dump ($page);
+var_dump ($_SERVER['REQUEST_URI']);
 
 if (strpos($page, "list") === 0 or strpos($page, "offer") === 0) {
     $pageNum = substr($page, -1);
