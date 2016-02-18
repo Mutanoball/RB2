@@ -1,6 +1,6 @@
 <?php
 
-class app {
+class App {
         
 
     function __construct($dbparams) {

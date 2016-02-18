@@ -24,7 +24,7 @@ $dbparams = array ("host" => $server,
                    "user" => $username,
                    "password" => $password,
                    "database" => $db);
-$app1 = new app($dbparams);
+$app1 = new App($dbparams);
 $page = substr($_SERVER['REQUEST_URI'],1);
 
 if (strpos($page, "list") === 0 or strpos($page, "offer") === 0) {
