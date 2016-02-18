@@ -12,6 +12,8 @@
         <div class="pervaplashka"><br><b>База первичной недвижимости Оренбурга</b><br></div>
         <div class="menu">
 <?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL);    
 require_once "config.php";
 spl_autoload_register(function ($class) {
     include $class . '.php';
@@ -23,7 +25,6 @@ $dbparams = array ("host" => $server,
                    "database" => $db);
 $app1 = new App($dbparams);
 $page = substr($_SERVER['REQUEST_URI'],1);
-var_dump ($_SERVER['REQUEST_URI']);
 
 if (strpos($page, "list") === 0 or strpos($page, "offer") === 0) {
     $pageNum = substr($page, -1);
