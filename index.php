@@ -79,7 +79,7 @@ switch ($page) {
         echo "но не очко обычно губит, а к одиннадцати туз";
         break;
     case "offer":
-        $at = new Flat ($app1->GetDB());
+        $at = new flat ($app1->GetDB());
         $at->prepareOffer($pageNum);
         $at->showOffer();
         $at->rollImageTape();

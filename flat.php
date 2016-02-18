@@ -1,5 +1,5 @@
 <?php
-class Flat {
+class flat {
     
     
     
