@@ -20,7 +20,9 @@
     };
 
     function yes() {
+        alert(jsdhfjsdgjfds);
         document.getElementsByClassName("tr")[0].innerText = "Лаве хуйнане";
+        window.confirm(rtert);
     };
 
     function no(name, password) {
@@ -43,7 +45,7 @@
             no(name, password);
             return false;
         }
-        else return yes();
+        else alert(jsdhfjsdgjfds);
     }
 </script>
     </body>
