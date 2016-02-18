@@ -13,6 +13,7 @@
         <div class="menu">
 <?php
 ini_set('display_errors', 1);
+set_include_path('/');
 error_reporting(E_ALL);    
 require_once "config.php";
 spl_autoload_register(function ($class) {
