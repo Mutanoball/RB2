@@ -27,15 +27,33 @@ color: #088;
 clear: left;
 }
 
+.line{
+background: #333;
+width:  100%;
+color: #088;
+height: 14px;
+text-align:left;
+font-family: GloberThinFree;
+text-transform: uppercase; 
+font-weight: 600;
+font-size: 13px;
+text-indent: 86%;
+height: 20px;
+padding-top: 4px;
+}
+
 .pervaplashka{
- height		: 3.75em;
+ height		: 2.75em;
  background: #333;
  color: #088;
  text-align:center;
  font-family: GloberThinFree;
- font-size: 4vw;
- font: bold;
-  
+ font-size: 3.5vw;
+}
+
+.vtoroplashka{
+    position: relative;
+    top: 2vw;
 }
 
 .menu{

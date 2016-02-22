@@ -1,4 +1,4 @@
-     <form class="auth" onsubmit="return valid()">
+     <form class="auth" onsubmit="return valid()" method="post">
           <br><br><br>
           <p><input id='name' type="text" size="30" placeholder="Имя" name="login"></p>
           <p class="emptywarning"></p>
@@ -48,9 +48,42 @@
         }
         else {
             yes()
-            return false;
+            return true;
         }
     }
 </script>
     </body>
 </html>
+<?php
+
+class User {
+    
+    function __construct($db) {
+       $this->db = $db;
+       @$this->login = $_POST["login"];
+    }
+
+    function defineUser (){
+        $result = $this->db->query("SELECT * FROM Users"); 
+              
+        while ($row = $result->fetch_row()){
+           
+           $login = $row[1];
+           if ($login == $this->login) {
+               return $login;
+               break;
+           }
+           
+       }
+    }
+     
+}
+$s = new User($app1->GetDB());
+$login = $s->defineUser();
+if (isset ($login)) {
+    session_start();
+    $_SESSION["login"]=$login;
+}
+echo $_SESSION["login"];
+
+?>

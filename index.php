@@ -8,8 +8,12 @@
     </head>
     
     <body>        
-        <hr class="nomar">
-        <div class="pervaplashka"><p style="font-size: 10pt">Имя<p><br><b>База первичной недвижимости Оренбурга</b><br></div>
+        <div class="line"><b><?php 
+ session_start();
+ echo ($_SESSION["login"]);
+ session_write_close();
+ ?></b></div>
+        <div class="pervaplashka"><div class="vtoroplashka"><b>База первичной недвижимости Оренбурга</b></div></div>
         <div class="menu">
 <?php
 ini_set('display_errors', 1);
@@ -74,6 +78,7 @@ switch ($page) {
         break;
     case "auth":
         require ("auth.php");
+        
         break;
     case "onmap":
         echo "но не очко обычно губит, а к одиннадцати туз";

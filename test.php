@@ -1,32 +1,3 @@
-<?php
-class BaseClass {
-   function __construct() {
-       print "Конструктор класса BaseClass\n";
-   }
-}
-
-class SubClass extends BaseClass {
-   function __construct() {
-       parent::__construct();
-      // print "Конструктор класса SubClass\n";
-   }
-}
-
-class OtherSubClass extends BaseClass {
-    // inherits BaseClass's constructor
-}
-
-// In BaseClass constructor
-$obj = new BaseClass();
-
-// In BaseClass constructor
-// In SubClass constructor
-$obj = new SubClass();
-
-// In BaseClass constructor
-$obj = new OtherSubClass();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -34,6 +5,16 @@ $obj = new OtherSubClass();
         <title></title>
     </head>
     <body>
+<?php
+session_name('ghdfghsdf');
+session_start(); 
+if (!isset($_SESSION['count'])) $_SESSION['count'] = 0;
+$_SESSION['count'] = $_SESSION['count'] + 1; 
+$t=session_id();
+
+echo $t;?> 
+<h2>Счетчик</h2> В текущей сессии работы с браузером Вы открыли эту страницу <?=$_SESSION['count']?> раз(а).<br> 
+        Закройте браузер, чтобы обнулить счетчик.<br> <a href="<?=$_SERVER['SCRIPT_NAME']?>" target="_blank">Открыть дочернее окно  браузера</a>. 
         
     </body>
 </html>
