@@ -135,7 +135,7 @@ DROP TABLE IF EXISTS `Users`;
 CREATE TABLE `Users` (
   `id` int(11) NOT NULL DEFAULT '0',
   `login` varchar(50) DEFAULT NULL,
-  `password` varchar(30) DEFAULT NULL,
+  `password` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -146,7 +146,7 @@ CREATE TABLE `Users` (
 
 LOCK TABLES `Users` WRITE;
 /*!40000 ALTER TABLE `Users` DISABLE KEYS */;
-INSERT INTO `Users` VALUES (1,'Superuser','1234'),(2,'Kolya','1234'),(3,'Vasya','1234'),(4,'VaganPetrovich','1234'),(5,'ShakalIvanych','1234'),(6,'Shmara','1234'),(7,'Supershmara','1234'),(8,'Overlord_SuperShmar','1234'),(9,'SynShakala','1234'),(10,'AtesShakala','1234'),(11,'Nyasha','1234'),(12,'Nyusha','1234'),(13,'Nyosha','1234'),(14,'Nevermind','1234'),(15,'OhMyGodItsFullOfStars','1234');
+INSERT INTO `Users` VALUES (1,'Superuser','$2y$10$nj7HHbZ66BdX.OwLu6Ml4eEYtDrJTVgM2SM9ueYg6gmZsKF4Jzhyq'),(2,'Kolya','$2y$10$nj7HHbZ66BdX.OwLu6Ml4eEYtDrJTVgM2SM9ueYg6gmZsKF4Jzhyq'),(3,'Vasya','$2y$10$nj7HHbZ66BdX.OwLu6Ml4eEYtDrJTVgM2SM9ueYg6gmZsKF4Jzhyq'),(4,'VaganPetrovich','$2y$10$nj7HHbZ66BdX.OwLu6Ml4eEYtDrJTVgM2SM9ueYg6gmZsKF4Jzhyq'),(5,'ShakalIvanych','$2y$10$nj7HHbZ66BdX.OwLu6Ml4eEYtDrJTVgM2SM9ueYg6gmZsKF4Jzhyq'),(6,'Shmara','$2y$10$nj7HHbZ66BdX.OwLu6Ml4eEYtDrJTVgM2SM9ueYg6gmZsKF4Jzhyq'),(7,'Supershmara','$2y$10$nj7HHbZ66BdX.OwLu6Ml4eEYtDrJTVgM2SM9ueYg6gmZsKF4Jzhyq'),(8,'Overlord_SuperShmar','$2y$10$nj7HHbZ66BdX.OwLu6Ml4eEYtDrJTVgM2SM9ueYg6gmZsKF4Jzhyq'),(9,'SynShakala','$2y$10$nj7HHbZ66BdX.OwLu6Ml4eEYtDrJTVgM2SM9ueYg6gmZsKF4Jzhyq'),(10,'AtesShakala','$2y$10$nj7HHbZ66BdX.OwLu6Ml4eEYtDrJTVgM2SM9ueYg6gmZsKF4Jzhyq'),(11,'Nyasha','$2y$10$nj7HHbZ66BdX.OwLu6Ml4eEYtDrJTVgM2SM9ueYg6gmZsKF4Jzhyq'),(12,'Nyusha','$2y$10$nj7HHbZ66BdX.OwLu6Ml4eEYtDrJTVgM2SM9ueYg6gmZsKF4Jzhyq'),(13,'Nyosha','$2y$10$nj7HHbZ66BdX.OwLu6Ml4eEYtDrJTVgM2SM9ueYg6gmZsKF4Jzhyq'),(14,'Nevermind','$2y$10$nj7HHbZ66BdX.OwLu6Ml4eEYtDrJTVgM2SM9ueYg6gmZsKF4Jzhyq'),(15,'OhMyGodItsFullOfStars','$2y$10$nj7HHbZ66BdX.OwLu6Ml4eEYtDrJTVgM2SM9ueYg6gmZsKF4Jzhyq');
 /*!40000 ALTER TABLE `Users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -159,4 +159,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-12-24 14:43:22
+-- Dump completed on 2016-02-23 17:43:25

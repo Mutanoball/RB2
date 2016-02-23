@@ -9,9 +9,7 @@
     
     <body>        
         <div class="line"><b><?php 
- session_start();
- echo ($_SESSION["login"]);
- session_write_close();
+
  ?></b></div>
         <div class="pervaplashka"><div class="vtoroplashka"><b>База первичной недвижимости Оренбурга</b></div></div>
         <div class="menu">
@@ -50,16 +48,23 @@ if ($page == "contacts") {
 } else {
     echo '<a href="/contacts" class="menu-item">Контакты</a>';
 }
-if ($page == "auth") {
-    echo '<p class="menu-item_state_active">Войти</p>';
-} else {
-    echo '<a href="/auth" class="menu-item">Войти</a>';
-}
 if ($page == "onmap") {
     echo '<p class="menu-item_state_active">На карте</p>';
 } else {
     echo '<a href="/onmap" class="menu-item">На карте</a>';
 }
+if ($page == "auth") {
+    session_start();
+    if (!isset($_SESSION["login"]))$_SESSION["login"]="Войти";
+    echo '<p class="menu-item_state_active" id = "login">'.$_SESSION["login"].'</p>';
+    session_write_close();
+} else {
+    session_start();
+    if (!isset($_SESSION["login"]))$_SESSION["login"]="Войти";
+    echo '<a href="/auth" class="menu-item">'.$_SESSION["login"].'</a>';
+    session_write_close();
+}
+
 echo '</div>';
 
 switch ($page) {

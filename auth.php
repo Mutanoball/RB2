@@ -7,9 +7,9 @@
           <p><input type="submit" style="width: 275px; font-family: DaxlinePro-Regular" value="Войти"></p>
                 
      </form>
-<p class = 'login'><p>     
+    
 <script>
-    var login = '';
+    
     document.forms[0].elements[0].oninput = function () {
         document.getElementsByClassName("emptywarning")[0].innerText = "";
         document.forms[0].elements[0].className = "rightfield";
@@ -20,9 +20,8 @@
         document.forms[0].elements[1].className = "rightfield";
     };
 
-    function yes() {
-        login = document.forms[0].elements[0].value;
-        document.getElementsByClassName("login")[0].innerText = login;
+    function yes(login) {
+        document.getElementsById("login")[0].innerText = login;
         
     };
 
@@ -47,43 +46,50 @@
             return false;
         }
         else {
-            yes()
+            yes(name)
             return true;
         }
     }
 </script>
-    </body>
-</html>
+
 <?php
 
 class User {
     
     function __construct($db) {
-       $this->db = $db;
-       @$this->login = $_POST["login"];
+        $this->db = $db;
+        @$this->login = $_POST["login"];
+        @$this->password = $_POST["password"];
+
     }
 
-    function defineUser (){
-        $result = $this->db->query("SELECT * FROM Users"); 
-              
-        while ($row = $result->fetch_row()){
-           
-           $login = $row[1];
-           if ($login == $this->login) {
-               return $login;
-               break;
-           }
-           
-       }
-    }
+    function loginUser () {
+        
+        $result = $this->db->query("SELECT * FROM Users WHERE login = '$this->login'");
+        $row = $result->fetch_assoc();
+        if ($this->login == ""){
+            return "";
+        } 
+        elseif (isset ($row['login'])) {
+            if (password_verify($this->password, $row['password'])) {
+            session_start();
+            $_SESSION["login"]=$row['login'];
+            }
+            else return "неправильная пара логин-пароль";
+        }
+        else return "неправильная пара логин-пароль";
+        
+        
+        
+    }      
+         
      
 }
 $s = new User($app1->GetDB());
-$login = $s->defineUser();
-if (isset ($login)) {
-    session_start();
-    $_SESSION["login"]=$login;
-}
-echo $_SESSION["login"];
+$s->loginUser();
+?>    
 
-?>
+<script>
+    document.getElementsByClassName('emptywarning')[1].innerText ='<?php echo $s->loginUser();?>';
+</script>
+
